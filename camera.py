@@ -5,7 +5,7 @@ from matplotlib.patches import RegularPolygon
 from matplotlib.collections import PatchCollection
 
 
-def add_pmts(color='b', ax=None):
+def add_pmts(ax=None, color='b', linewidth=1):
 
     x0 = 27  # 9 times the inner radius
     y0 = 6 * 3 * 2 / np.sqrt(3)  # 6 times the outer radius
@@ -31,6 +31,7 @@ def add_pmts(color='b', ax=None):
     col = PatchCollection(polys)
     col.set_facecolors('none')
     col.set_edgecolors(color)
+    col.set_linewidths(linewidth)
     ax.add_artist(col)
 
     return col
@@ -49,4 +50,3 @@ if __name__ == '__main__':
     plt.grid()
 
     plt.show()
-
